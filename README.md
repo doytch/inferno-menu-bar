@@ -50,6 +50,7 @@ This function will get called every time a descendant `MenuItem` is clicked. The
 
 ### MenuItem
 Used for JS callbacks and submenus.
+
 `<MenuItem command='foo'>Foo</MenuItem>`
 
 #### command: `string`
@@ -65,6 +66,7 @@ Normally, a `MenuItem`'s children will be used for the label. However, if the ch
 
 ### MenuLinkItem
 Used for links that should be created using `<Link>` components from `inferno-router`.
+
 `<MenuLinkItem to='/apage'>A Page</MenuLinkItem>`
 
 #### unpadded: `boolean`
@@ -75,6 +77,7 @@ All props are passed directly to the `<Link>` created.
 
 ### MenuAnchorItem
 Used for links that should be created using a raw `<a>` node.
+
 `<MenuAnchorItem title='Weee' href='https://github.com/doytch'>My Github</MenuAnchorItem>`
 
 #### unpadded: `boolean`
