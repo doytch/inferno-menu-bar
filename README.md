@@ -22,15 +22,15 @@ const MyMenu = () => (
         <MenuAnchorItem href='https://github.com/doytch' title='Weee'>My Github</MenuAnchorItem>
         <MenuItem label='Tools'>
             <Menu>
-                <MenuItem>Tool A</MenuItem>
-                <MenuItem>Tool B</MenuItem>
-                <MenuItem>Tool C</MenuItem>
+                <MenuItem command='A'>Tool A</MenuItem>
+                <MenuItem command='B'>Tool B</MenuItem>
+                <MenuItem command='C'>Tool C</MenuItem>
                 <MenuSeparator />
                 <MenuItem label='More Tools...'>
                     <Menu>
-                        <MenuItem>Tool D</MenuItem>
-                        <MenuItem>Tool E</MenuItem>
-                        <MenuItem>Tool F</MenuItem>
+                        <MenuItem command='D'>Tool D</MenuItem>
+                        <MenuItem command='E'>Tool E</MenuItem>
+                        <MenuItem command='F'>Tool F</MenuItem>
                     </Menu>
                 </MenuItem>
             </Menu>
