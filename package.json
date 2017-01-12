@@ -2,7 +2,7 @@
   "name": "inferno-menu-bar",
   "version": "0.1.0",
   "description": "A library of menu bar components for Inferno. Supports dropdowns and nested menus.",
-  "main": "lib/inferno-menu-bar.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "webpack -p",
     "debug": "webpack -d",
@@ -26,11 +26,6 @@
     "url": "https://github.com/doytch/inferno-menu-bar/issues"
   },
   "homepage": "https://github.com/doytch/inferno-menu-bar#readme",
-  "dependencies": {
-    "inferno": "^1.1.2",
-    "inferno-router": "^1.1.2",
-    "webpack": "^1.14.0"
-  },
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-core": "^6.21.0",
@@ -48,7 +43,10 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^3.0.2",
     "eslint-plugin-react": "^6.9.0",
+    "inferno": "*",
+    "inferno-router": "*",
     "mocha": "^3.2.0",
-    "style-loader": "^0.13.1"
+    "style-loader": "^0.13.1",
+    "webpack": "^1.14.0"
   }
 }
