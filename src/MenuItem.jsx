@@ -1,0 +1,23 @@
+import Inferno, { linkEvent } from 'inferno'; // eslint-disable-line no-unused-vars
+import Menu from './Menu';
+
+const MenuItem = (props) => {
+    const contents = [
+        <a href='#' onClick={linkEvent(props.command, props.onSelect)}>
+            {props.label || props.children}
+        </a>,
+    ];
+
+    if (props.children && props.children.type === Menu) {
+        props.children.props.onSelect = props.onSelect;
+        contents.push(props.children);
+    }
+
+    return (
+        <li className={`menu-item ${props.unpadded ? 'menu-item__unpadded' : ''}`}>
+            {contents}
+        </li>
+    );
+};
+
+export default MenuItem;

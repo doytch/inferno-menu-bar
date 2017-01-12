@@ -1,0 +1,54 @@
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu-item, .menu-item a, .menu-item a * {
+    height: 30px;
+}
+
+.menu-bar {
+    display: flex;
+    background: #fff;
+    text-align: center;
+}
+
+.menu-item > a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 8px 10px;
+}
+
+.menu-item__unpadded a {
+    padding: 0;
+}
+
+.menu-item {
+    position: relative;
+    text-align: left;
+}
+
+.menu-item:hover {
+    background: #ddd;
+}
+
+/* Submenu Positioning */
+.menu {
+    position: absolute;
+    left: -99999em;
+    background: #fff;
+    border: 1px solid #333;
+    white-space: nowrap;
+}
+
+.menu-bar > .menu-item:hover > .menu {
+    left: -1px; // To account for the 1px border
+    min-width: 100%;
+}
+
+.menu-bar > .menu-item .menu-item:hover > .menu {
+    left: 100%;
+    top: 0;
+}

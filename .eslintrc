@@ -1,0 +1,29 @@
+{
+    "extends": "airbnb",
+    "parser": "babel-eslint",
+    "rules": {
+        "class-methods-use-this": 0,
+        "import/no-unresolved": 0,
+        "import/no-extraneous-dependencies": 0,
+        "import/extensions": 0,
+        "indent": ["error", 4, { "SwitchCase": 1 }],
+        "jsx-a11y/href-no-hash": 0,
+        "jsx-a11y/no-static-element-interactions": 0,
+        "jsx-quotes": ["error", "prefer-single"],
+        "max-len": ["error", { "code": 120, "ignorePattern": ".*Copyright.*" }],
+        "no-console": ["warn", { "allow": ["warn", "error"]}],
+        "no-param-reassign": 0,
+        "react/jsx-indent": ["error", 4],
+        "react/jsx-indent-props": ["error", 4],
+        "react/no-unused-prop-types": 0,
+        "react/prop-types": 0,
+        "react/react-in-jsx-scope": 0
+    },
+    "settings": {
+        "import/resolver": {
+            "webpack": {
+                "config": "webpack.config.js"
+            }
+        }
+    }
+}

@@ -1,0 +1,54 @@
+{
+  "name": "inferno-menu-bar",
+  "version": "0.1.0",
+  "description": "A library of menu bar components for Inferno. Supports dropdowns and nested menus.",
+  "main": "lib/inferno-menu-bar.js",
+  "scripts": {
+    "build": "webpack -p",
+    "debug": "webpack -d",
+    "test": "mocha --compilers js:babel-core/register --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doytch/inferno-menu-bar.git"
+  },
+  "keywords": [
+    "inferno",
+    "menu",
+    "menubar",
+    "navbar",
+    "ui",
+    "components"
+  ],
+  "author": "Mark Hurst Deutsch <markpd@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/doytch/inferno-menu-bar/issues"
+  },
+  "homepage": "https://github.com/doytch/inferno-menu-bar#readme",
+  "dependencies": {
+    "inferno": "^1.1.2",
+    "inferno-router": "^1.1.2",
+    "webpack": "^1.14.0"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.21.0",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-inferno": "^1.5.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-2": "^6.18.0",
+    "chai": "^3.5.0",
+    "css-loader": "^0.26.1",
+    "eslint": "^3.13.1",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-loader": "^1.6.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0",
+    "mocha": "^3.2.0",
+    "style-loader": "^0.13.1"
+  }
+}
