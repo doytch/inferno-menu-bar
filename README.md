@@ -41,36 +41,45 @@ const MyMenu = () => (
 ```
 
 ##Components
+
 ###MenuBar
 The top-level component that actually creates the bar itself.
+
 ####onSelect: `function(command)`
 This function will get called every time a descendant `MenuItem` is clicked. The `command` argument's value will be the value of `command` for the clicked `MenuItem`.
 
 ###MenuItem
 Used for JS callbacks and submenus.
 `<MenuItem command='foo'>Foo</MenuItem>`
+
 ####command: `string`
 The value to pass to the `onSelect` callback.
+
 ####unpadded: `boolean`
 When `true`, adds a `menu-item__unpadded` class to the DOM node that removes the default padding in the styles.
 
 `<MenuItem label='Opens a Menu'><Menu>...</Menu></MenuItem>`
+
 ####label: `string`
 Normally, a `MenuItem`'s children will be used for the label. However, if the children are supposed to be a `Menu`, use this property to set the label.
 
 ###MenuLinkItem
 Used for links that should be created using `<Link>` components from `inferno-router`.
 `<MenuLinkItem to='/apage'>A Page</MenuLinkItem>`
+
 ####unpadded: `boolean`
 When `true`, adds a `menu-item__unpadded` class to the DOM node that removes the default padding in the styles.
+
 ####Other Props
 All props are passed directly to the `<Link>` created.
 
 ###MenuAnchorItem
 Used for links that should be created using a raw `<a>` node.
 `<MenuAnchorItem title='Weee' href='https://github.com/doytch'>My Github</MenuAnchorItem>`
+
 ####unpadded: `boolean`
 When `true`, adds a `menu-item__unpadded` class to the DOM node that removes the default padding in the styles.
+
 ####Other props
 All props are passed directly to the `<a>` created.
 
