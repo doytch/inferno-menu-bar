@@ -8,7 +8,7 @@ const MenuItem = (props) => {
         </a>,
     ];
 
-    if (props.children && props.children.type === Menu) {
+    if ((typeof props.label !== 'undefined') && (typeof props.children === 'object')) {
         props.children.props.onSelect = props.onSelect;
         contents.push(props.children);
     }
