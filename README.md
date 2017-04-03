@@ -7,10 +7,10 @@ A library of menu bar components for [Inferno](https://github.com/infernojs/infe
 - Basic styling out of the box.
 - Classes all over the place to let you CSS your heart out.
 
-##Installation
+## Installation
 `npm install --save inferno-menu-bar`
 
-##Usage
+## Usage
 ```
 import { MenuBar, MenuItem, MenuLinkItem, Menu, MenuSeparator, MenuAnchorItem } from 'inferno-menu-bar';
 
@@ -43,7 +43,7 @@ const MyMenu = () => (
 There's also a `webpack-dev-server` example that you can run with `npm install && npm run start`.
 
 
-##Components
+## Components
 
 ### MenuBar
 The top-level component that actually creates the bar itself.
@@ -95,6 +95,6 @@ Used to create a dropdown menu. Nest other components inside it.
 ### MenuSeparator
 Creates an `<hr />` element.
 
-##Requirements
+## Requirements
 - `inferno >= 1.5.0`
 - `inferno-router >= 1.5.0`
