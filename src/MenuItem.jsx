@@ -1,5 +1,4 @@
 import Inferno, { linkEvent } from 'inferno'; // eslint-disable-line no-unused-vars
-import Menu from './Menu';
 
 const MenuItem = (props) => {
     const contents = [

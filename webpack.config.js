@@ -1,55 +1,73 @@
-var webpack = require('webpack');
-var path = require('path');
+const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require('path');
 
-var config = {
-    entry: './src/index.js',
+let config = {
+    entry: {
+        lib: './src/lib.js',
+        example: './example/example.js',
+    },
     output: {
-        path: './lib',
-        filename: 'index.js',
+        path: path.join(__dirname, 'out'),
+        filename: '[name].js',
         library: 'InfernoMenuBar',
         libraryTarget: 'umd',
-        umdNamedDefine: true
+        umdNamedDefine: true,
     },
     module: {
-        loaders: [{
+        rules: [{
             test: /\.(js|jsx)$/,
-            loaders: ['babel-loader'],
+            loader: 'babel-loader',
             exclude: /node_modules/,
         }, {
             test: /\.(js|jsx)?$/,
-            loaders: ['eslint-loader'],
+            loader: 'eslint-loader',
             exclude: /node_modules/,
         }, {
             test: /\.css$/,
-            loaders: ['style-loader', 'css-loader'],
-        }]
+            use: [{
+                loader: 'style-loader',
+            }, {
+                loader: 'css-loader',
+            }],
+        }, {
+            test: /\.html$/,
+            loader: 'file-loader',
+        }],
     },
     resolve: {
-        root: [path.resolve('./src')],
-        extensions: ['', '.js', '.jsx']
+        modules: [
+            path.join(__dirname, 'src'),
+            'node_modules',
+        ],
+        extensions: ['.js', '.jsx'],
     },
     externals: {
-        "inferno": "inferno",
-        "inferno-router": "inferno-router",
+        inferno: 'inferno',
+        'inferno-router': 'inferno-router',
     },
     plugins: [
-        new webpack.optimize.DedupePlugin(),
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-        })
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+        }),
+        new CopyWebpackPlugin([{
+            from: path.join(__dirname, 'example/index.html'),
+            to: path.join(__dirname, 'out/index.html'),
+        }])
     ],
+    devServer: {
+        port: 30000,
+        inline: true,
+        host: '0.0.0.0',
+    },
 };
 
-if (process.argv.indexOf('-p')) {
-    config.plugins.push(
-        new webpack.optimize.UglifyJsPlugin({
-            compress: { warnings: false },
-        })
-    );
-} else {
+if (process.argv.indexOf('-p') === -1) {
     config = Object.assign({
         devtool: 'source-map',
     }, config);
+
+    config.externals = undefined;
 }
 
 module.exports = config;

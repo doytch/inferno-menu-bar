@@ -17,7 +17,7 @@ import { MenuBar, MenuItem, MenuLinkItem, Menu, MenuSeparator, MenuAnchorItem } 
 const onSelect = command => console.log(`Selection: ${command}`);
 
 const MyMenu = () => (
-    <MenuBar onSelect={this.onSelect}>
+    <MenuBar onSelect={onSelect}>
         <MenuLinkItem to='/about'><strong>About</strong></MenuLinkItem>
         <MenuAnchorItem href='https://github.com/doytch' title='Weee'>My Github</MenuAnchorItem>
         <MenuItem label='Tools'>
@@ -39,6 +39,9 @@ const MyMenu = () => (
     </MenuBar>
 );
 ```
+
+There's also a `webpack-dev-server` example that you can run with `npm install && npm run start`.
+
 
 ##Components
 
@@ -65,7 +68,7 @@ When `true`, adds a `menu-item__unpadded` class to the DOM node that removes the
 Normally, a `MenuItem`'s children will be used for the label. However, if the children are supposed to be a `Menu`, use this property to set the label.
 
 ### MenuLinkItem
-Used for links that should be created using `<Link>` components from `inferno-router`.
+Used for links that should be created using `<Link>` components from `inferno-router`. Naturally, a `Router` needs to have been created somewhere in the parent chain for this to work.
 
 `<MenuLinkItem to='/apage'>A Page</MenuLinkItem>`
 
@@ -93,5 +96,5 @@ Used to create a dropdown menu. Nest other components inside it.
 Creates an `<hr />` element.
 
 ##Requirements
-- `inferno >= 1.0.0`
-- `inferno-router >= 1.0.0`
+- `inferno >= 1.5.0`
+- `inferno-router >= 1.5.0`
