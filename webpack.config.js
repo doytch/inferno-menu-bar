@@ -59,6 +59,7 @@ let config = {
         port: 30000,
         inline: true,
         host: '0.0.0.0',
+        historyApiFallback: true,
     },
 };
 

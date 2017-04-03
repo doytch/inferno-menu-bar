@@ -8,45 +8,49 @@ import createBrowserHistory from 'history/createBrowserHistory';
 
 const browserHistory = createBrowserHistory();
 
-const onSelect = selected => console.log(`Selected "${selected}`);
+const onSelect = selected => console.log(`"${selected}" clicked!`);
 
-const Example = (
-    <MenuBar onSelect={onSelect}>
-        <MenuAnchorItem href='https://github.com/doytch'>My Github</MenuAnchorItem>
-        <MenuItem label='Tools'>
-            <Menu>
-                <MenuAnchorItem href='http://google.com'>Tool D</MenuAnchorItem>
-                <MenuAnchorItem href='http://bbc.com'>Tool E</MenuAnchorItem>
-                <MenuAnchorItem href='http://reddit.com'>Tool F</MenuAnchorItem>
-                <MenuSeparator />
-                <MenuItem label='More Tools...'>
-                    <Menu>
-                        <MenuAnchorItem href='http://google.com'>Tool D</MenuAnchorItem>
-                        <MenuAnchorItem href='http://bbc.com'>Tool E</MenuAnchorItem>
-                        <MenuAnchorItem href='http://reddit.com'>Tool F</MenuAnchorItem>
-                    </Menu>
-                </MenuItem>
-            </Menu>
-        </MenuItem>
-    </MenuBar>
+const TheMenuBar = (props) => (
+    <div>
+        <MenuBar onSelect={onSelect}>
+            <MenuLinkItem to='/'>Home</MenuLinkItem>
+            <MenuItem command='clicker'>Logger</MenuItem>
+            <MenuAnchorItem href='https://github.com/doytch'>My Github</MenuAnchorItem>
+            <MenuItem label='Tools'>
+                <Menu>
+                    <MenuLinkItem to='/a'>Tool A</MenuLinkItem>
+                    <MenuLinkItem to='/b'>Tool B</MenuLinkItem>
+                    <MenuLinkItem to='/c'>Tool C</MenuLinkItem>
+                    <MenuSeparator />
+                    <MenuItem label='External Links...'>
+                        <Menu>
+                            <MenuAnchorItem href='https://ddg.gg'>Duck Duck Go</MenuAnchorItem>
+                            <MenuAnchorItem href='https://news.ycombinator.com/'>Hacker News</MenuAnchorItem>
+                            <MenuAnchorItem href='https://www.reddit.com/r/hockey/'>Reddit</MenuAnchorItem>
+                        </Menu>
+                    </MenuItem>
+                </Menu>
+            </MenuItem>
+        </MenuBar>
+        { props.children }
+    </div>
 );
 
 const Home = () => <div>Home</div>;
-const A = () => <div>a</div>;
-const B = () => <div>b</div>;
-const C = () => <div>c</div>;
-const About = () => <div>About</div>;
+const A = () => <div>Page A</div>;
+const B = () => <div>Page B</div>;
+const C = () => <div>Page C</div>;
 
-const routes = (
+const Routes = () => (
     <Router history={browserHistory}>
-        <Route component={ Example }>
+        <Route component={ TheMenuBar }>
             <Route path='/' component={ Home } />
             <Route path='/a' component={ A } />
             <Route path='/b' component={ B } />
             <Route path='/c' component={ C } />
-            <Route path='/about' component={ About } />
+            <Route path='*' component={ Home } />
         </Route>
     </Router>
 );
 
-Inferno.render(Example, document.getElementById('app'));
+Inferno.render(<Routes />, document.getElementById('app'));
