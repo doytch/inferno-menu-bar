@@ -37,6 +37,7 @@ nav ul {
     background: #fff;
     border: 1px solid #333;
     white-space: nowrap;
+    z-index: 9999;
 }
 
 .menu-bar > .menu-item:hover > .menu {
