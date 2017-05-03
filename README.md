@@ -11,7 +11,7 @@ A library of menu bar components for [Inferno](https://github.com/infernojs/infe
 `npm install --save inferno-menu-bar`
 
 ## Usage
-```
+```js
 import { MenuBar, MenuItem, MenuLinkItem, Menu, MenuSeparator, MenuAnchorItem } from 'inferno-menu-bar';
 
 const onSelect = command => console.log(`Selection: ${command}`);
@@ -96,5 +96,5 @@ Used to create a dropdown menu. Nest other components inside it.
 Creates an `<hr />` element.
 
 ## Requirements
-- `inferno >= 1.5.0`
-- `inferno-router >= 1.5.0`
+- `inferno >= 3.0.0`
+- `inferno-router >= 3.0.0`
