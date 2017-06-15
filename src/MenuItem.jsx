@@ -20,7 +20,6 @@ const MenuItem = (props) => {
 };
 
 MenuItem.defaultProps = {
-    onSelect: () => {},
     className: '',
 };
 
