@@ -6,7 +6,11 @@ const Menu = (props) => {
         child.props.onSelect = props.onSelect;
     });
 
-    return <ul className='menu'>{children}</ul>;
+    return <ul className={`menu ${props.className}`}>{children}</ul>;
+};
+
+Menu.defaultProps = {
+    className: '',
 };
 
 export default Menu;

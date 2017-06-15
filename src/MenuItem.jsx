@@ -13,10 +13,15 @@ const MenuItem = (props) => {
     }
 
     return (
-        <li className={`menu-item ${props.unpadded ? 'menu-item__unpadded' : ''}`}>
+        <li className={`menu-item ${props.className} ${props.unpadded ? 'menu-item__unpadded' : ''}`}>
             {contents}
         </li>
     );
+};
+
+MenuItem.defaultProps = {
+    onSelect: () => {},
+    className: '',
 };
 
 export default MenuItem;

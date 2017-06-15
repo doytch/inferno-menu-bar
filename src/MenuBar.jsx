@@ -4,7 +4,7 @@ require('./MenuBar.css');
 
 const MenuBar = props => (
     <nav>
-        <ul className='menu-bar'>
+        <ul className={`menu-bar ${props.className}`}>
             {
                 props.children.map(Node =>
                     <Node.type {...props} {...Node.props}>
@@ -14,5 +14,9 @@ const MenuBar = props => (
         </ul>
     </nav>
 );
+
+MenuBar.defaultProps = {
+    className: '',
+};
 
 export default MenuBar;

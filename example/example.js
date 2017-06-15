@@ -18,9 +18,9 @@ const TheMenuBar = (props) => (
             <MenuAnchorItem href='https://github.com/doytch'>My Github</MenuAnchorItem>
             <MenuItem label='Tools'>
                 <Menu>
-                    <MenuLinkItem to='/a'>Tool A</MenuLinkItem>
-                    <MenuLinkItem to='/b'>Tool B</MenuLinkItem>
-                    <MenuLinkItem to='/c'>Tool C</MenuLinkItem>
+                    <MenuLinkItem className='tool-menu-item' to='/a'>Tool A</MenuLinkItem>
+                    <MenuLinkItem className='tool-menu-item' to='/b'>Tool B</MenuLinkItem>
+                    <MenuLinkItem className='tool-menu-item' to='/c'>Tool C</MenuLinkItem>
                     <MenuSeparator />
                     <MenuItem label='External Links...'>
                         <Menu>
